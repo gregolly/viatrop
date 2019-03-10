@@ -32,6 +32,7 @@
           <li class="item-navbar"><a class="link-navbar" href="">contato</a></li>
           <li class="item-navbar"><a class="link-navbar" href="">blog</a></li>
         </ul>
+        <?php echo do_shortcode('[gtranslate]'); ?>
       </nav>
     </div> 
   </div>  
