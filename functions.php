@@ -2,7 +2,7 @@
 
 // Coloque o código abaixo no arquivo functions.php do seu tema. O número 50 é a quantidade de caracteres a exibir.
 function wpdev_custom_excerpt_length( $length ) {
-  return 30;
+  return 70;
  }
  add_filter( 'excerpt_length', 'wpdev_custom_excerpt_length');
 
@@ -25,6 +25,12 @@ function viatrop_tema_css() {
   wp_enqueue_style('normalize-viatrop-tema', get_stylesheet_directory_uri() . '/css/normalize.css');
   wp_enqueue_style('reset-viatrop-tema', get_stylesheet_directory_uri() . '/css/reset.css');
   wp_enqueue_style('css-viatrop-tema', get_stylesheet_directory_uri() . '/style.css');
+}
+
+add_action('wp_enqueue_scripts', 'viatrop_tema_scripts');
+
+function viatrop_tema_scripts(){
+	wp_enqueue_script('jquery', get_stylesheet_directory_uri() . '/js/jquery.js');
 }
 
 //registrar menu

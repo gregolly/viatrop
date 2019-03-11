@@ -25,7 +25,7 @@
       </div>
 
       <div class="item-rodape">
-        <img src="<?php the_field('logo-viatrop'); ?>" alt="<?php the_field('logo-viatrop-alt'); ?>">
+        <img src="<?php the_field('logo-viatrop', 7); ?>" alt="<?php the_field('logo-viatrop-alt', 7); ?>">
       </div>
     </div>
     <p class="copy">&#169; Todos os direitos reservados viatrop. 2019</p>

@@ -20,7 +20,7 @@
     <div class="row justify">
       <div class="logo">
         <a href="">
-          <img src="<?php the_field('logo-viatrop', 15); ?>" alt="<?php the_field('logo-viatrop-alt'); ?>">
+          <img src="<?php the_field('logo-viatrop'); ?>" alt="<?php the_field('logo-viatrop-alt'); ?>">
         </a>
       </div>
 

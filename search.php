@@ -2,13 +2,13 @@
 
 
 <section class="bg-blog">
-  <h1 class="title-blog">Notícias</h1>
+  <h1 class="title-blog">Você buscou por: <?php echo esc_html(get_query_var('s')); ?></h1>
 </section>
 
 <?php if (is_active_sidebar('viatrop-sidebar')) : ?>
 <section class="container-blog container blog">
 <?php else: ?>
-<section class="container blog blog-full">
+<section class="container blog">
 <?php endif; ?>
   <div class="row divisor">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
