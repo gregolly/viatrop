@@ -9,6 +9,9 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 */
+.customize-support{
+  margin-top: 30px;
+}
 *{
   box-sizing: border-box;
 }
@@ -51,9 +54,21 @@ li{
   background-color: #000;
   padding: 5px 0;
   position: fixed;
-  z-index: 10000000000;
+  z-index: 1000;
   width: 100%;
   opacity: .8;
+  top: 0;
+  left: 0;
+}
+.header.-interno{
+  background-color: #000;
+  padding: 5px 0;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  opacity: .8;
+  top: 0;
+  left: 0;
 }
 .header .container .row .logo img{
   width: 80px;
@@ -247,7 +262,7 @@ li{
   margin: 0 auto;
   position: relative;
   top: -20px;
-  height: 630px;
+  height: 680px;
 }
 .contact .contact-container h4{
   font-size: 2em;
@@ -378,4 +393,107 @@ li{
 .footer .item-rodape .item-address i{
   font-size: 1.5em;
   padding-right: 10px;
+}
+.bg-photo{
+  background-image: url('img/forest.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  margin-top: 48px;
+}
+.bg-photo h1{
+  font-size: 3em;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 70px;
+}
+.products{
+  padding: 90px 0;
+}
+.products a{
+  text-decoration: none;
+}
+.products .item-products{
+  width: 100%;
+}
+.products .item-product .img-product{
+  width: 30%;
+}
+.products .item-product .container-titulo-product{
+  background-color: #ccc;
+  width: 70%;
+  padding: 20px;
+}
+.products .item-product .container-titulo-product:hover{
+  background-color: #000;
+}
+.products .item-product .titulo-product{
+  text-align: center;
+  font-size: 2em;
+  padding-top: 110px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;  
+}
+.form-product{
+  padding: 90px 0;
+}
+.form-product h4{
+  font-size: 2em;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-product input{
+  width: 100%;
+  border-radius: 10px;
+  padding: 5px;
+}
+.form-product input[type="submit"]{
+  width: 100%;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 20px;
+  border:none;
+  font-size: 1.5em;
+  font-family: 'Roboto', sans-serif;
+}
+.form-product textarea{
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+}
+.titulo-custom-post{
+  font-size: 3em;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 100px;
+}
+.bg-blog{
+  background-image: url('img/forest.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  margin-top: 48px;
+}
+.bg-blog > .title-blog{
+  font-size: 3em;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  padding-top: 70px
 }

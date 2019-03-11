@@ -15,7 +15,7 @@
 
 <body>
 
-<header class="header">
+<header class="header -interno">
   <div class="container">
     <div class="row justify">
       <div class="logo">
