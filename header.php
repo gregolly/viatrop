@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Viatrop</title>
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css">
   <link rel="stylesheet" type="text/css" media="screen" href="css/normalize.css">
@@ -26,14 +26,19 @@
 
       <nav class="navigation">
         <ul class="navbar">
-          <li class="item-navbar"><a class="link-navbar" href="">home</a></li>
-          <li class="item-navbar"><a class="link-navbar" href="">sobre</a></li>
+          <li class="item-navbar"><a class="link-navbar" href="#sobre">sobre</a></li>
           <li class="item-navbar"><a class="link-navbar" href="">produtos</a></li>
-          <li class="item-navbar"><a class="link-navbar" href="">contato</a></li>
+          <li class="item-navbar"><a class="link-navbar" href="#contato">contato</a></li>
           <li class="item-navbar"><a class="link-navbar" href="">blog</a></li>
         </ul>
         <?php echo do_shortcode('[gtranslate]'); ?>
       </nav>
+      <?php 
+      wp_nav_menu([
+        'menu'   => 'Something custom walker',
+        'walker' => new Custom_Walker_Nav_Menu(), // O nome da sua classe aqui
+      ]);
+      ?>
     </div> 
   </div>  
 </header>

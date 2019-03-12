@@ -17,7 +17,7 @@
         <?php the_post_thumbnail('medium'); ?>
       </a>  
         <div class="content-blog">
-          <h2><?php the_title(); ?></h2>
+          <h2><?php echo wp_trim_words( get_the_title(), 3 ); ?></h2>
           <div class="date"><i class="far fa-calendar-alt"></i><?php the_time('d/m/y'); ?></div>
           <?php echo the_excerpt(); ?>
           <a class="read-more" href="<?php the_permalink(); ?>">leia mais &rarr;</a>

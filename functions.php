@@ -99,3 +99,40 @@ register_sidebar([
 	'before_title'	=> '<h4>',
 	'after_title'	=> '</h4>'
 ]);
+
+add_filter ('the_title', 'max_title_length');
+
+function max_title_length( $title ) {
+	$max = 30;
+	if( strlen( $title ) > $max ) {
+	return substr( $title, 0, $max ). " &hellip;";
+	} else {
+	return $title;
+	}
+}
+
+class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
+	// Sua classe com os métodos que você quer alterar
+}
+
+// REMOVE A VERSAO DO CSS E JS
+function vc_remove_wp_ver_css_js( $src ) {
+	if ( strpos( $src, 'ver=' ) )
+	$src = remove_query_arg( 'ver', $src );
+	return $src;
+	}
+	add_filter( 'style_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
+	add_filter( 'script_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
+	// fim da remoção da versão css e js
+
+	// MOVE O JAVASCRIPT PARA O RODAPE
+function remove_head_scripts() {
+	remove_action('wp_head', 'wp_print_scripts');
+	remove_action('wp_head', 'wp_print_head_scripts', 9);
+	remove_action('wp_head', 'wp_enqueue_scripts', 1);
+	add_action('wp_footer', 'wp_print_scripts', 5);
+	add_action('wp_footer', 'wp_enqueue_scripts', 5);
+	add_action('wp_footer', 'wp_print_head_scripts', 5);
+	}
+	add_action( 'wp_enqueue_scripts', 'remove_head_scripts' );
+	// END Custom Scripting to Move JavaScript

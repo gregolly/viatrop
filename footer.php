@@ -2,8 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="item-rodape">
-        <h5 class="title-footer">Sobre</h5>
-        <p class="text-footer">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <h5 class="title-footer"><?php the_field('title_about'); ?></h5>
+        <p class="text-footer"><?php the_field('text_about'); ?></p>
       </div>
 
       <div class="item-rodape">
@@ -19,9 +19,9 @@
       </div>
 
       <div class="item-rodape">
-      <li class="item-address"><i class="fas fa-map-marker-alt"></i>Endereço, n 52 - n, bairro - centro</li>
-      <li class="item-address"><i class="fas fa-phone"></i><span>(31)</span> 3326-1209 - 9999-000</li>
-      <li class="item-address"><i class="far fa-envelope"></i>gregollyff@hotmail.com</li>
+        <?php if( have_rows('address-item') ): while ( have_rows('address-item') ) : the_row(); ?>
+          <li class="item-address"><i class="<?php the_sub_field('font-awesome'); ?>"></i><?php the_sub_field('address-text'); ?></li>
+        <?php  endwhile; else : endif; ?>
       </div>
 
       <div class="item-rodape">

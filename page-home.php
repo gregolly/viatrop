@@ -3,27 +3,29 @@
 ?>
 <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 <section class="slide">
+<?php if( have_rows('slide') ): while ( have_rows('slide') ) : the_row(); ?>
   <div class="item-slide">
-    <img src="<?= get_template_directory_uri() ?>/img/img2.jpg" alt="" class="item-slide-img">
+    <img src="<?php the_sub_field('slide-img'); ?>" alt="<?php the_sub_field('slide-img-alt'); ?>" class="item-slide-img">
     <div class="absolute">
-      <h2 class="item-slide-title">titulo</h2>
-      <p class="item-slide-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+      <h2 class="item-slide-title"><?php the_sub_field('title_slide'); ?></h2>
+      <p class="item-slide-text"><?php the_sub_field('text_slide'); ?></p>
     </div>
   </div>
+<?php  endwhile; else : endif; ?>  
 </section>
 
-<main class="main">
+<main class="main" id="sobre">
   <div class="container">
     <div class="row">
       <div class="description">
-        <h1 class="title_description">titulo</h1>
-        <h3 class="subtitle_description">subtitulo</h3>
-        <p class="text_description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <h1 class="title_description"><?php the_field('title_description'); ?></h1>
+        <h3 class="subtitle_description"><?php the_field('subtitle_description'); ?></h3>
+        <p class="text_description"><?php the_field('text_description'); ?></p>
       </div>
 
       <div class="main_images">
-        <img class="main_item_images" src="<?= get_template_directory_uri() ?>/img/plants.jpg" alt="">
-        <img class="main_item_images -item-absolute" src="<?= get_template_directory_uri() ?>/img/plants.jpg" alt="">
+        <img class="main_item_images" src="<?php the_field('img-main'); ?>" alt="<?php the_field('img-main-alt'); ?>">
+        <img class="main_item_images -item-absolute" src="<?php the_field('img-main-absolute'); ?>" alt="<?php the_field('img-main-absolute-alt'); ?>">
       </div>
     </div>
   </div>
@@ -32,63 +34,67 @@
 <section class="address">
   <div class="container">
     <div class="row around">
-      <li class="item-address"><i class="fas fa-map-marker-alt"></i>Endereço, n 52 - n, bairro - centro</li>
-      <li class="item-address"><i class="fas fa-phone"></i><span>(31)</span> 3326-1209 - 9999-000</li>
-      <li class="item-address"><i class="far fa-envelope"></i>gregollyff@hotmail.com</li>
+  <?php if( have_rows('address-item') ): while ( have_rows('address-item') ) : the_row(); ?>
+      <li class="item-address"><i class="<?php the_sub_field('font-awesome'); ?>"></i><?php the_sub_field('address-text'); ?></li>
+  <?php  endwhile; else : endif; ?>
     </div>
   </div>
 </section>
 
 <section class="stuff">
   <div class="container">
-    <header>qualidades</header>
+    <header><?php the_field('title_quality'); ?></header>
     <div class="row">
+    <?php if( have_rows('stuffs') ): while ( have_rows('stuffs') ) : the_row(); ?>
       <div class="stuff-item">
-        <img class="stuff-item-img" src="<?= get_template_directory_uri() ?>/img/carrying.png" alt="">
-        <h4 class="stuff-item-subtitle">titulo</h4>
-        <p class="stuff-item-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <img class="stuff-item-img" src="<?php the_sub_field('img-stuff'); ?>" alt="<?php the_sub_field('img-stuff-alt'); ?>">
+        <h4 class="stuff-item-subtitle"><?php the_sub_field('title-stuff'); ?></h4>
+        <p class="stuff-item-text"><?php the_sub_field('text-stuff'); ?></p>
       </div>
-
-      <div class="stuff-item">
-        <img class="stuff-item-img" src="<?= get_template_directory_uri() ?>/img/target.png" alt="">
-        <h4 class="stuff-item-subtitle">titulo</h4>
-        <p class="stuff-item-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-      </div>
-
-      <div class="stuff-item">
-        <img class="stuff-item-img" src="<?= get_template_directory_uri() ?>/img/idea.png" alt="">
-        <h4 class="stuff-item-subtitle">titulo</h4>
-        <p class="stuff-item-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-      </div>
+    <?php  endwhile; else : endif; ?>  
     </div>
   </div>
 </section>
-
+<style>
+.banner{
+  background-image: url(<?php the_field(''); ?>);
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+  color: #fff;
+  position: relative;
+}
+</style>
 <section class="banner">
   <div class="overlay"></div>
-  <blockquote>"Todos os seus sonhos podem se tornar realidade  se você tem coragem para persegui-los"</blockquote>
-  <cite>walt disney</cite>
+  <blockquote><?php the_field('quote'); ?></blockquote>
+  <cite><?php the_field('cite'); ?></cite>
 </section>
 
 <section class="doubt">
   <div class="container">
-    <h5>Perguntas Frequentes!</h5>
+    <h5><?php the_field('title_quotes'); ?></h5>
     <div class="item-doubt">
-      <a href="">Qual a melhor de forma de fazer uma importação?</a>
+    <?php if( have_rows('asks') ): while ( have_rows('asks') ) : the_row(); ?>
+      <a href="#"><?php the_sub_field('ask_title'); ?></a>
       <div class="item-ask">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p><?php the_sub_field('ask_content'); ?></p>
       </div>
+    <?php  endwhile; else : endif; ?>    
     </div>
   </div>
+  <a class="btn-action" href="#contato"><?php the_field('ask_contato'); ?></a>
 </section>
 
 <section class="map">
- 
-    <img width="100%" height="500px" src="<?= get_template_directory_uri(); ?>/img/google.png" alt="Google Map of Albany, NY">
-
+  <a href="<?php the_field(); ?>">
+    <img width="100%" height="500px" src="<?php the_field(); ?>" alt="Google Map of Albany, NY">
+  </a>
 </section>
 
-<section class="contact">
+<section class="contact" id="contato">
   <div class="contact-container">
     <?php the_content(); ?>
   </div>

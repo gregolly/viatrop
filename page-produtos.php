@@ -1,7 +1,7 @@
 <?php get_header('interno'); 
 //Template name: Produtos
 ?>
-<section class="bg-photo">
+<section class="bg-produto">
   <h1>Produtos</h1>
 </section>
 

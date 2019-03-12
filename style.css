@@ -9,8 +9,11 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 */
-.customize-support{
+/*.customize-support{
   margin-top: 30px;
+}*/
+html{
+  margin-top: 0px !important;
 }
 *{
   box-sizing: border-box;
@@ -98,6 +101,7 @@ li{
   width: 100%;
   height: 100%;
   position: relative;
+  margin-top: 48px;
 }
 .slide > .item-slide .item-slide-img{
   width: 100%;
@@ -221,16 +225,7 @@ li{
   letter-spacing: 1px;
   line-height: 1.4em;
 }
-.banner{
-  background-image: url('img/slide2.jpg');
-  background-attachment: fixed;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 350px;
-  color: #fff;
-  position: relative;
-}
+
 .overlay{
   width: 100%;
   height: 100%;
@@ -309,6 +304,30 @@ li{
 
 .doubt{
   padding: 90px 0;
+}
+.doubt .btn-action{
+  display: block;
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 1.5em;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+}
+.doubt .btn-action:hover{
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  transition: .5s ease;
 }
 .doubt .container .item-doubt a{
   color: #000;
@@ -395,7 +414,7 @@ li{
   font-size: 1.5em;
   padding-right: 10px;
 }
-.bg-photo{
+.bg-produto{
   background-image: url('img/forest.jpg');
   background-position: center center;
   background-repeat: no-repeat;
@@ -403,13 +422,14 @@ li{
   height: 200px;
   margin-top: 48px;
 }
-.bg-photo h1{
+.bg-produto h1{
   font-size: 3em;
   font-family: 'Roboto', sans-serif;
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
   padding-top: 70px;
+  color: #fff;
 }
 .products{
   padding: 90px 0;
@@ -422,23 +442,35 @@ li{
 }
 .products .item-product img{
   width: 30%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 .products .item-product .container-titulo-product{
   background-color: #ccc;
   width: 70%;
   padding: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .products .item-product .container-titulo-product:hover{
   background-color: #000;
+  color: #fff;
+  
 }
 .products .item-product .titulo-product{
   text-align: center;
-  font-size: 2em;
-  padding-top: 110px;
+  font-size: 4em;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 100px;
   letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
-  color: #fff;  
+  color: #000;
+  height: 100%;
+  width: 100%;  
+}
+.products .item-product .titulo-product:hover{
+  color: inherit;
 }
 .form-product{
   padding: 90px 0;
@@ -700,5 +732,34 @@ li{
     float: none;
     max-width: 300px;
     margin: 20px auto;
+  }
+}
+@media (max-width:782px){
+  .slide{
+    margin-top: 74px;
+  }
+}
+@media (max-width: 620px){
+  .slide .item-slide .absolute{
+    top: 150px;
+    left: 80px;
+  }
+}
+@media (max-width: 400px){
+  .slide .item-slide .absolute{
+    top: 100px;
+    left: 50px;
+  }
+  .main .container .row .description .title_description{
+    font-size: 6em;
+  }
+  .stuff .container header{
+    font-size: 2em;
+  }
+}
+@media (max-width: 344px){
+  .slide .item-slide .absolute{
+    top: 70px;
+    left: 50px;
   }
 }
