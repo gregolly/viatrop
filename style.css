@@ -142,14 +142,14 @@ li{
   padding-right: 30px;
 }
 .main .container .row .description .title_description{
-  font-size: 7em;
+  font-size: 3em;
   font-family: 'Roboto', sans-serif;  
   text-align: center;
   letter-spacing: 2px;
   font-weight: bold;
 }
 .main .container .row .description .subtitle_description{
-  font-size: 2.2em;
+  font-size: 1.5em;
   text-align: center;
   font-family: 'Robota', sans-serif;
   letter-spacing: 2px;
@@ -225,7 +225,16 @@ li{
   letter-spacing: 1px;
   line-height: 1.4em;
 }
-
+.banner{
+  background-image: url('img/img3.jpg');
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+  color: #fff;
+  position: relative;
+}
 .overlay{
   width: 100%;
   height: 100%;
@@ -335,9 +344,19 @@ li{
   text-align: center;
   /* margin: 0 auto; */
   display: block;
-  font-size: 1.5em;
+  font-size: 2em;
   font-family: 'Roboto', sans-serif;
   margin-bottom: 10px;
+}
+.doubt .container .item-doubt .item-ask{
+  margin-bottom: 30px;
+}
+.doubt .container .item-doubt .item-ask p{
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.3;
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
 }
 .doubt .container h5{
   font-size: 3em;

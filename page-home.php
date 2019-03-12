@@ -19,7 +19,7 @@
     <div class="row">
       <div class="description">
         <h1 class="title_description"><?php the_field('title_description'); ?></h1>
-        <h3 class="subtitle_description"><?php the_field('subtitle_description'); ?></h3>
+        <h2 class="subtitle_description"><?php the_field('subtitle_description'); ?></h2>
         <p class="text_description"><?php the_field('text_description'); ?></p>
       </div>
 
@@ -55,18 +55,7 @@
     </div>
   </div>
 </section>
-<style>
-.banner{
-  background-image: url(<?php the_field(''); ?>);
-  background-attachment: fixed;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 350px;
-  color: #fff;
-  position: relative;
-}
-</style>
+
 <section class="banner">
   <div class="overlay"></div>
   <blockquote><?php the_field('quote'); ?></blockquote>
@@ -77,20 +66,20 @@
   <div class="container">
     <h5><?php the_field('title_quotes'); ?></h5>
     <div class="item-doubt">
-    <?php if( have_rows('asks') ): while ( have_rows('asks') ) : the_row(); ?>
-      <a href="#"><?php the_sub_field('ask_title'); ?></a>
+    <?php if( have_rows('doubt') ): while ( have_rows('doubt') ) : the_row(); ?>
+      <a href="#"><?php the_sub_field('doubt_title'); ?></a>
       <div class="item-ask">
-        <p><?php the_sub_field('ask_content'); ?></p>
+        <p><?php the_sub_field('doubt_content'); ?></p>
       </div>
     <?php  endwhile; else : endif; ?>    
     </div>
   </div>
-  <a class="btn-action" href="#contato"><?php the_field('ask_contato'); ?></a>
+  <a class="btn-action" href="#contato"><?php the_field('doubt_contato'); ?></a>
 </section>
 
 <section class="map">
-  <a href="<?php the_field(); ?>">
-    <img width="100%" height="500px" src="<?php the_field(); ?>" alt="Google Map of Albany, NY">
+  <a href="<?php the_field('map-url'); ?>">
+    <img width="100%" height="500px" src="<?php the_field('map'); ?>" alt="<?php the_field('map-alt'); ?>">
   </a>
 </section>
 

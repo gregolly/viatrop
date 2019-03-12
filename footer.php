@@ -2,8 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="item-rodape">
-        <h5 class="title-footer"><?php the_field('title_about'); ?></h5>
-        <p class="text-footer"><?php the_field('text_about'); ?></p>
+        <h5 class="title-footer"><?php the_field('title_about', 7); ?></h5>
+        <p class="text-footer"><?php the_field('text_about', 7); ?></p>
       </div>
 
       <div class="item-rodape">
@@ -19,8 +19,8 @@
       </div>
 
       <div class="item-rodape">
-        <?php if( have_rows('address-item') ): while ( have_rows('address-item') ) : the_row(); ?>
-          <li class="item-address"><i class="<?php the_sub_field('font-awesome'); ?>"></i><?php the_sub_field('address-text'); ?></li>
+        <?php if( have_rows('address-item', 7) ): while ( have_rows('address-item', 7) ) : the_row(); ?>
+          <li class="item-address"><i class="<?php the_sub_field('font-awesome', 7); ?>"></i><?php the_sub_field('address-text', 7); ?></li>
         <?php  endwhile; else : endif; ?>
       </div>
 
