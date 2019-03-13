@@ -1,1 +1,3 @@
-$('.slide > :first').addClass('active');
+$(function(){
+  ('.slide > :first').addClass('active');
+})
