@@ -1,0 +1,1 @@
+$('.slide > :first').addClass('active');

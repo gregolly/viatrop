@@ -1,6 +1,16 @@
 <?php get_header('interno'); 
 //Template name: Produtos
 ?>
+<style>
+.bg-produto{
+  background-image: url("<?php the_field('background-products'); ?>");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  margin-top: 48px;
+}
+</style>
 <section class="bg-produto">
   <h1>Produtos</h1>
 </section>

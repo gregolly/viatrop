@@ -1,11 +1,12 @@
 <?php get_header(); 
 //Template name: Home
 ?>
+
 <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 <section class="slide">
 <?php if( have_rows('slide') ): while ( have_rows('slide') ) : the_row(); ?>
   <div class="item-slide">
-    <img src="<?php the_sub_field('slide-img'); ?>" alt="<?php the_sub_field('slide-img-alt'); ?>" class="item-slide-img">
+      <img src="<?php the_sub_field('slide-img'); ?>" alt="<?php the_sub_field('slide-img-alt'); ?>" class="item-slide-img">
     <div class="absolute">
       <h2 class="item-slide-title"><?php the_sub_field('title_slide'); ?></h2>
       <p class="item-slide-text"><?php the_sub_field('text_slide'); ?></p>
@@ -56,6 +57,18 @@
   </div>
 </section>
 
+<style>
+.banner{
+  background-image: url("<?php the_field('background-parallax'); ?>");
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+  color: #fff;
+  position: relative;
+}
+</style>
 <section class="banner">
   <div class="overlay"></div>
   <blockquote><?php the_field('quote'); ?></blockquote>

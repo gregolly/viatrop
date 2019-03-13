@@ -1,6 +1,15 @@
 <?php get_header('interno'); ?>
 
-
+<style>
+.bg-blog{
+  background-image: url("<?php the_field('background-blog', 15); ?>");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  margin-top: 48px;
+}
+</style>
 <section class="bg-blog">
   <h1 class="title-blog">Notícias</h1>
 </section>

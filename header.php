@@ -33,12 +33,12 @@
         </ul>
         <?php echo do_shortcode('[gtranslate]'); ?>
       </nav>
-      <?php 
+      <!--//?php 
       wp_nav_menu([
         'menu'   => 'Something custom walker',
         'walker' => new Custom_Walker_Nav_Menu(), // O nome da sua classe aqui
       ]);
-      ?>
+      ?-->
     </div> 
   </div>  
 </header>

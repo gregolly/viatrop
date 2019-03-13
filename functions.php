@@ -30,7 +30,9 @@ function viatrop_tema_css() {
 add_action('wp_enqueue_scripts', 'viatrop_tema_scripts');
 
 function viatrop_tema_scripts(){
-	wp_enqueue_script('jquery', get_stylesheet_directory_uri() . '/js/jquery.js');
+	wp_enqueue_script('jquery', get_stylesheet_directory_uri() . '/js/jquery-3.1.1.min.js');
+	wp_enqueue_script('slider', get_stylesheet_directory_uri() . '/js/slide.js');
+	//wp_deregister_script('jquery'); //interfere no funcionamento de plugins que usam jquery
 }
 
 //registrar menu
@@ -111,20 +113,21 @@ function max_title_length( $title ) {
 	}
 }
 
-class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
+//class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
 	// Sua classe com os métodos que você quer alterar
-}
+//}
 
 // REMOVE A VERSAO DO CSS E JS
+/*
 function vc_remove_wp_ver_css_js( $src ) {
 	if ( strpos( $src, 'ver=' ) )
 	$src = remove_query_arg( 'ver', $src );
 	return $src;
 	}
-	add_filter( 'style_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
-	add_filter( 'script_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
+	//add_filter( 'style_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
+	//add_filter( 'script_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
 	// fim da remoção da versão css e js
-
+*/
 	// MOVE O JAVASCRIPT PARA O RODAPE
 function remove_head_scripts() {
 	remove_action('wp_head', 'wp_print_scripts');
