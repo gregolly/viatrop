@@ -24,21 +24,17 @@
         </a>
       </div>
 
-      <nav class="navigation">
-        <ul class="navbar">
-          <li class="item-navbar"><a class="link-navbar" href="#sobre">sobre</a></li>
-          <li class="item-navbar"><a class="link-navbar" href="">produtos</a></li>
-          <li class="item-navbar"><a class="link-navbar" href="#contato">contato</a></li>
-          <li class="item-navbar"><a class="link-navbar" href="">blog</a></li>
-        </ul>
-        <?php echo do_shortcode('[gtranslate]'); ?>
-      </nav>
-      <!--//?php 
-      wp_nav_menu([
-        'menu'   => 'Something custom walker',
-        'walker' => new Custom_Walker_Nav_Menu(), // O nome da sua classe aqui
-      ]);
-      ?-->
+      <?php
+          if(has_nav_menu('primary')){
+        wp_nav_menu([
+          'theme_location' => 'primary',
+          'container' => 'nav',
+          'container_class' => 'navigation',
+          'fallback_cb' => false
+        ]);
+      }
+
+      ?>
     </div> 
   </div>  
 </header>

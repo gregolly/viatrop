@@ -1,3 +1,3 @@
-jquery(function(){
-  ('.slide > :first').addClass('active');
-})
+jQuery(function(){
+  ('.slide').first().addClass('active');
+});

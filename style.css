@@ -82,20 +82,20 @@ li{
   display: flex;
   align-items: center;
 }
-.header .container .row .navigation .navbar{
+.header .container .row .navigation ul{
   flex-direction: row;
 }
-.header .navigation .navbar .item-navbar{
+.header .navigation .navbar ul li{
   padding-right: 10px;
   display: inline-block;
   text-transform: uppercase;
   font-family: 'Roboto', sans-serif;
 }
-.header .navigation .navbar .item-navbar .link-navbar{
+.header .navigation .navbar .item-navbar ul li a{
   color: #fff;
   text-decoration: none;
 }
-.header .navigation .navbar .item-navbar .link-navbar:hover{
+.header .navigation .navbar .item-navbar ul li a:hover{
   color: #ccc;
 }
 .slide{
