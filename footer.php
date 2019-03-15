@@ -7,20 +7,21 @@
       </div>
 
       <div class="item-rodape">
-        <nav class="navigation">
-          <ul class="navbar">
-            <li class="item-navbar"><a class="link-navbar" href="">home</a></li>
-            <li class="item-navbar"><a class="link-navbar" href="">sobre</a></li>
-            <li class="item-navbar"><a class="link-navbar" href="">produtos</a></li>
-            <li class="item-navbar"><a class="link-navbar" href="">contato</a></li>
-            <li class="item-navbar"><a class="link-navbar" href="">blog</a></li>
-          </ul>
-        </nav>
+      <?php
+        if(has_nav_menu('footer')){
+          wp_nav_menu([
+            'theme_location' => 'footer',
+            'container' => 'nav',
+            'container_class' => 'navigation',
+            'fallback_cb' => false
+          ]);
+        }
+      ?>
       </div>
 
       <div class="item-rodape">
         <?php if( have_rows('address-item', 7) ): while ( have_rows('address-item', 7) ) : the_row(); ?>
-          <li class="item-address"><i class="<?php the_sub_field('font-awesome', 7); ?>"></i><?php the_sub_field('address-text', 7); ?></li>
+          <li class="item-address"><i class="<?= get_sub_field('font-awesome', 7); ?>"></i><?= get_sub_field('address-text', 7); ?></li>
         <?php  endwhile; else : endif; ?>
       </div>
 

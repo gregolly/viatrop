@@ -5,7 +5,7 @@
 <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 <section class="slide">
 <?php if( have_rows('slide') ): while ( have_rows('slide') ) : the_row(); ?>
-  <div class="item-slide">
+  <div class="item-slide intro">
       <img src="<?php the_sub_field('slide-img'); ?>" alt="<?php the_sub_field('slide-img-alt'); ?>" class="item-slide-img">
     <div class="absolute">
       <h2 class="item-slide-title"><?php the_sub_field('title_slide'); ?></h2>
@@ -80,9 +80,9 @@
     <h5><?php the_field('title_quotes'); ?></h5>
     <div class="item-doubt">
     <?php if( have_rows('doubt') ): while ( have_rows('doubt') ) : the_row(); ?>
-      <a href="#"><?php the_sub_field('doubt_title'); ?></a>
-      <div class="item-ask">
-        <p><?php the_sub_field('doubt_content'); ?></p>
+      <a href="#" class="link" id="link"><?php the_sub_field('doubt_title'); ?></a>
+      <div class="item-ask" id="pergunta">
+        <p class="pergunta efeito"><?php the_sub_field('doubt_content'); ?></p>
       </div>
     <?php  endwhile; else : endif; ?>    
     </div>

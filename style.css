@@ -83,19 +83,19 @@ li{
   align-items: center;
 }
 .header .container .row .navigation ul{
-  flex-direction: row;
+  display: flex;
+  flex-direction: wrap;
 }
-.header .navigation .navbar ul li{
+.header .navigation ul li{
   padding-right: 10px;
-  display: inline-block;
   text-transform: uppercase;
   font-family: 'Roboto', sans-serif;
 }
-.header .navigation .navbar .item-navbar ul li a{
+.header .navigation ul li a{
   color: #fff;
   text-decoration: none;
 }
-.header .navigation .navbar .item-navbar ul li a:hover{
+.header .navigation ul li a:hover{
   color: #ccc;
 }
 .slide{
@@ -105,7 +105,7 @@ li{
   margin-top: 48px;
   overflow: hidden;
 }
-.slide > .item-slide{
+.item-slide{
   width: 100%;
   opacity: 0;
   transition: .5s;
@@ -350,13 +350,27 @@ li{
   display: block;
   font-size: 2em;
   font-family: 'Roboto', sans-serif;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+.doubt .container .item-doubt a:hover{
+  transform: scale(1.1);
+}
+.doubt .container .item-doubt a::before{
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 10px;
+  background-color: #000;
+  margin-right: 20px;
+  border-radius: 5px;
+  vertical-align: middle;
 }
 .doubt .container .item-doubt .item-ask{
   margin-bottom: 30px;
 }
-.doubt .container .item-doubt .item-ask p{
-  max-width: 500px;
+.doubt .container .item-doubt .item-ask .pergunta{
+  max-width: 800px;
   margin: 0 auto;
   line-height: 1.3;
   font-size: 1em;
@@ -368,6 +382,12 @@ li{
   text-align: center;
   margin-bottom: 60px;
   letter-spacing: 2px;
+}
+.item-ask{
+  display: none;
+}
+.show{
+  display: block;
 }
 .footer{
   padding: 90px 0;
@@ -411,19 +431,19 @@ li{
   align-items: center;
   padding: 20px 20px 20px 80px;
 }
-.footer .container .row .navigation .navbar{
+.footer .container .row .navigation ul{
   flex-direction: column;
 }
-.footer .navigation .navbar .item-navbar{
+.footer .navigation ul li{
   padding-bottom: 20px;
   text-transform: uppercase;
   font-family: 'Roboto', sans-serif;
 }
-.footer .navigation .navbar .item-navbar .link-navbar{
+.footer .navigation ul li a{
   color: #fff;
   text-decoration: none;
 }
-.footer .navigation .navbar .item-navbar .link-navbar:hover{
+.footer .navigation ul li a:hover{
   color: #ccc;
 }
 .footer .item-rodape .item-address{

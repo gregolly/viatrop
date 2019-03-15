@@ -25,15 +25,14 @@
       </div>
 
       <?php
-          if(has_nav_menu('primary')){
-        wp_nav_menu([
-          'theme_location' => 'primary',
-          'container' => 'nav',
-          'container_class' => 'navigation',
-          'fallback_cb' => false
-        ]);
-      }
-
+        if(has_nav_menu('primary')){
+          wp_nav_menu([
+            'theme_location' => 'primary',
+            'container' => 'nav',
+            'container_class' => 'navigation',
+            'fallback_cb' => false
+          ]);
+        }
       ?>
     </div> 
   </div>  
