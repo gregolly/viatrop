@@ -34,6 +34,7 @@ function viatrop_tema_scripts(){
 	wp_enqueue_script('slider', get_stylesheet_directory_uri() . '/js/slide.js', array('jquery-viatrop'), '', true);
 	wp_enqueue_script('jquery-ajax', "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js", array(), '3.3.1', true);
 	wp_enqueue_script('dropDown', get_stylesheet_directory_uri() . '/js/dropDown.js', array('jquery'), '', true);
+	wp_enqueue_script('menu-resposivo', get_stylesheet_directory_uri() . '/js/menu.js', array('jquery'), '', true);
 	//wp_deregister_script('jquery'); //interfere no funcionamento de plugins que usam jquery
 }
 

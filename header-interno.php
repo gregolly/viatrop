@@ -5,9 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Viatrop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css">
-  <link rel="stylesheet" type="text/css" media="screen" href="css/normalize.css">
-  <link rel="stylesheet" type="text/css" media="screen" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <?php wp_head();  ?>
@@ -23,7 +20,7 @@
           <img src="<?php the_field('logo-viatrop', 7); ?>" alt="<?php the_field('logo-viatrop-alt', 7); ?>">
         </a>
       </div>
-
+      <i class="fas fa-bars bar-menu"></i>
       <?php
         if(has_nav_menu('primary')){
           wp_nav_menu([
