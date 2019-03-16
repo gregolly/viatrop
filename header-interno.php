@@ -15,7 +15,7 @@
 <header class="header -interno">
   <div class="container">
     <div class="row justify">
-      <div class="logo">
+      <div class="logo animated slideInDown">
         <a href="">
           <img src="<?php the_field('logo-viatrop', 7); ?>" alt="<?php the_field('logo-viatrop-alt', 7); ?>">
         </a>
@@ -26,7 +26,7 @@
           wp_nav_menu([
             'theme_location' => 'primary',
             'container' => 'nav',
-            'container_class' => 'navigation',
+            'container_class' => 'navigation animated slideInDown',
             'fallback_cb' => false
           ]);
         }

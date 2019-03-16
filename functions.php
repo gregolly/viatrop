@@ -35,6 +35,7 @@ function viatrop_tema_scripts(){
 	wp_enqueue_script('jquery-ajax', "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js", array(), '3.3.1', true);
 	wp_enqueue_script('dropDown', get_stylesheet_directory_uri() . '/js/dropDown.js', array('jquery'), '', true);
 	wp_enqueue_script('menu-resposivo', get_stylesheet_directory_uri() . '/js/menu.js', array('jquery'), '', true);
+	wp_enqueue_script('scroll_suave', get_stylesheet_directory_uri() . '/js/softScroll.js', array('jquery'), '', true);
 	//wp_deregister_script('jquery'); //interfere no funcionamento de plugins que usam jquery
 }
 
@@ -45,7 +46,7 @@ function viatrop_menu_tema_init()
 {
 	register_nav_menu('primary', 'Menu Principal');
 	register_nav_menu('footer', 'Menu footer');
-	register_nav_menu('inner', 'Menu interno');
+	//register_nav_menu('inner', 'Menu interno');
 }
 
 add_theme_support( 'post-formats', [ 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'] );
