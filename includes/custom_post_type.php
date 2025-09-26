@@ -4,7 +4,7 @@ function criar_post_type_produtos_home() {
     $labels = array(
         'name'               => _x( 'Produtos', 'post type general name', 'viatrop' ),
         'singular_name'      => _x( 'Produto', 'post type singular name', 'viatrop' ),
-        'menu_name'          => _x( 'Produtos', 'admin menu', 'viatrop' ),
+        'menu_name'          => _x( 'Produtos home', 'admin menu', 'viatrop' ),
         'name_admin_bar'     => _x( 'Produto', 'add new on admin bar', 'viatrop' ),
         'add_new'            => _x( 'Adicionar Novo', 'produto', 'viatrop' ),
         'add_new_item'       => __( 'Adicionar Novo Produto', 'viatrop' ),
