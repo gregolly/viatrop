@@ -1,0 +1,254 @@
+/*
+
+Theme Name: Viatrop
+
+Author: Gregolly França
+
+Description: A simple theme for viatrop.
+
+Version: 1.0
+
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.logo img{
+	width: 80px;
+}
+
+.bg-green {
+	background-color: #115E59;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+/* .scrolled .site-header {
+	height: 80px !important;
+} */
+
+.scrolled .site-header > div {
+	padding-top: 0.5rem !important;
+	padding-bottom: 0.5rem !important;
+}
+
+#menu-menu-mobile-1 {
+	margin-bottom: 0;
+}
+
+#menu-menu-mobile li a, #menu-menu-mobile-1 li a {
+	color: #374151;
+	font-weight: 500;
+}
+
+#menu-menu-mobile li a {
+	padding: 20px;
+	display: block;
+	max-width: 100%;
+}
+
+#menu-menu-mobile 	{
+	padding-left: 0;
+}
+
+#menu-menu-1 a {
+	--tw-text-opacity: 1;
+    color: rgb(55 65 81 / var(--tw-text-opacity, 1));
+	font-weight: 500;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+@media screen and (max-width: 768px) {
+	.button-request-prices button {
+		width: 100%;
+	}
+	
+	.navbar-toggler  {
+		display: block;
+		position: absolute;
+		top: 40px;
+		right: 40px;
+	}
+}
+
+.bg-lime-500 {
+	background-color: #BDCE00;
+	padding-top: .5rem;
+    padding-bottom: .5rem;
+	padding-left: 1.5rem;
+    padding-right: 1.5rem;
+	font-weight: 600;
+}
+
+.main-home {
+	position: relative;
+	z-index: 1;
+}
+
+.main-home::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 100, 97, 0.2); 
+	z-index: -1;
+}
+
+.text-lime-custom {
+    color: #a3e635; /* Cor exata do text-lime-400 do Tailwind */
+}
+
+.opacity-90 {
+    opacity: 0.9;
+}
+
+.btn-hover:hover {
+	opacity: 0.9;
+	background-color: #115E59 !important;
+	border-color: #115E59 !important;
+}
+
+/* mudanca na row */
+.row {
+	margin-right: 5px !important;
+	margin-left: 5px !important;
+}
+
+/* mudanca botao whatsapp */
+.whatsapp { 
+	@media screen and (max-width: 768px) {
+		font-size: 16px !important;
+	}
+}
+
+.navbar-toggler {
+	@media screen and (max-width: 768px) {
+		top: 15px !important;
+	}
+}
+
+.navbar-toggler
+
+/* ==========================================================================
+   Personalização das Tabs de Produtos
+   ========================================================================== */
+
+/* Estilo para as tabs INATIVAS */
+.nav-pills .btn.btn-outline-primary {
+    color: #006461;
+    border-color: #006461;
+    background-color: transparent;
+}
+
+/* Estilo para quando o mouse passar por cima de uma tab INATIVA (HOVER) */
+.nav-pills .btn.btn-outline-primary:hover,
+.nav-pills .btn.btn-outline-primary:focus {
+    color: #ffffff;
+    background-color: #004d4a;
+    border-color: #004d4a;
+}
+
+/* Estilo para a tab ATIVA (a que está selecionada) */
+.nav-pills .btn.btn-outline-primary.active,
+.nav-pills .show > .btn.btn-outline-primary {
+    color: #ffffff; 
+    background-color: #006461; 
+    border-color: #006461; 
+}
+
+/* ==========================================================================
+   Personalização das Tabs de Servicos
+   ========================================================================== */
+#servicos {
+	background-color: #f0fdfa;
+}
+
+#servicos svg{
+	color: #006461;
+}
+
+/*
+ * Adiciona um ícone de "enviar" ao botão do Contact Form 7
+ */
+.wpcf7-submit.btn-com-icone {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-send w-4 h-4 mr-2'%3E%3Cpath d='M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z'%3E%3C/path%3E%3Cpath d='m21.854 2.147-10.94 10.939'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 1rem center; /* Posição do ícone */
+    background-size: 16px 16px; /* Tamanho do ícone */
+    padding-left: 2.5rem !important; /* Espaço para o ícone não sobrepor o texto */
+}
+
+/*
+ * Padroniza a largura dos campos no Contact Form 7
+ */
+.wpcf7-form input:not([type="submit"]),
+.wpcf7-form select,
+.wpcf7-form textarea {
+    width: 100% !important; /* Força todos os campos a ocuparem a largura total */
+    box-sizing: border-box !important; /* Garante que padding e bordas não alterem a largura final */
+}
+
+/*
+ * Ajuste de scroll para compensar o header fixo/sticky.
+ * Isso garante que as seções parem no lugar certo ao clicar em links âncora.
+ */
+section[id] {
+    scroll-margin-top: 200px; /* Use a altura do seu header + um pequeno respiro */
+}
