@@ -112,6 +112,31 @@ function viatrop_customizer_hero( $wp_customize ) {
         'section'  => 'home_hero_section',
         'settings' => 'home_hero_imagem',
     )));
+
+    // --- Campo: Destaques ---
+    $numero_de_destaques = 3;
+
+    for($i = 0; $i < $numero_de_destaques; $i++) {
+        // --- Campo: Ícone do Destaque ---
+        $wp_customize->add_setting( 'home_hero_destaque_icone_' . $i, array('default' => ''));
+        $wp_customize->add_control( 'home_hero_destaque_icone_control_' . $i, array(
+            'label'    => __( 'Ícone do Destaque ' . ($i + 1) . ' (código SVG)', 'viatrop' ),
+            'section'  => 'home_hero_section',
+            'settings' => 'home_hero_destaque_icone_' . $i,
+            'type'     => 'textarea',
+            'description' => __( 'Cole o código SVG completo do ícone aqui.', 'viatrop' ),
+        ) );
+
+        // --- Campo: Texto do Destaque ---
+        $wp_customize->add_setting( 'home_hero_destaque_texto_' . $i, array('default' => 'Texto do destaque ' . ($i + 1)));
+        $wp_customize->add_control( 'home_hero_destaque_texto_control_' . $i, array(
+            'label'    => __( 'Texto do Destaque ' . ($i + 1), 'viatrop' ),
+            'section'  => 'home_hero_section',
+            'settings' => 'home_hero_destaque_texto_' . $i,
+            'type'     => 'text',
+        ) );
+    }
+
 }
 
 add_action( 'customize_register', 'viatrop_customizer_hero' );
@@ -167,7 +192,7 @@ function viatrop_customizer_servicos( $wp_customize ) {
     ) );
 
     // 3. ADICIONAR CAMPOS PARA CADA SERVIÇO USANDO UM LOOP
-    $numero_de_servicos = 6; // Defina quantos cards de serviço você quer que sejam editáveis
+    $numero_de_servicos = 6;
 
     for ( $i = 1; $i <= $numero_de_servicos; $i++ ) {
         // --- Separador para organização ---
