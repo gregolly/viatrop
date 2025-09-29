@@ -7,6 +7,8 @@ function viatrop_setup() {
   register_nav_menu('main-menu', 'Main Menu');
   register_nav_menu('footer-menu', 'Footer Menu');
 
+  load_theme_textdomain( 'viatrop', get_template_directory() . '/languages' );
+
 }
 
 add_action('after_setup_theme', 'viatrop_setup');
