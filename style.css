@@ -254,6 +254,9 @@ section[id] {
 	section[id] {
 		scroll-margin-top: 400px; /* Valor para telas menores */
 	}
+	.nav-pills .btn.btn-outline-primary {
+		margin-left: .25rem !important;
+	}
 }
 
 /* ==========================================================================
