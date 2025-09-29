@@ -15,9 +15,25 @@
 </head>
 
 <body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
 
     <div id="top-info-bar" class="... seu código da barra superior ...">
         </div>
+
+    <div class="menu-de-idiomas-topo">
+        <ul class="d-flex justify-content-center p-2 m-0 gap-3">
+            <?php 
+            // Verifica se a função do Polylang existe antes de chamá-la
+            if ( function_exists( 'pll_the_languages' ) ) {
+                pll_the_languages( array( 
+                    'show_flags' => 1,      // 1 para mostrar bandeiras, 0 para ocultar
+                    'show_names' => 1,      // 1 para mostrar nomes, 0 para ocultar
+                    'dropdown'   => 0       // 1 para criar um dropdown, 0 para lista
+                ) ); 
+            }
+            ?>
+        </ul>
+    </div>
 
     <header class="site-header sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
