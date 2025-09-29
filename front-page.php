@@ -85,7 +85,7 @@ if (empty($imagem_url)) {
         <div class="col-12 col-md-4">
             <div class="d-inline-flex align-items-center justify-content-center">
                 <?php echo $icone; ?>
-                <span class="fs-5"><?php echo esc_html( pll__($titulo) ) ?></span>
+                <span class="fs-5"><?php echo esc_html( $titulo ) ?></span>
             </div>
         </div>
         <?php
