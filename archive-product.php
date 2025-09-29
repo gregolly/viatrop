@@ -1,9 +1,8 @@
 <?php
-/**
- * The template for displaying product archive pages.
- *
- * This template displays all products with pagination on the "All" tab.
- */
+/*
+Template Name: Página de Arquivo de Produtos
+*/
+$tab_todos = get_theme_mod('produto_texto_aba_todos', 'Todos');
 get_header(); ?>
 
 <section id="produtos" class="py-5">
@@ -21,9 +20,13 @@ get_header(); ?>
                 ?>
                 <?php if (!empty($product_categories) && !is_wp_error($product_categories)) : ?>
                     <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                        <?php if ($tab_todos) : ?>
                         <li class="nav-item" role="presentation">
-                            <button class="btn btn-outline-primary active" id="pills-todos-tab" data-bs-toggle="pill" data-bs-target="#pills-todos" type="button" role="tab" aria-controls="pills-todos" aria-selected="true">Todos</button>
+                            <button class="btn btn-outline-primary active" id="pills-todos-tab" data-bs-toggle="pill" data-bs-target="#pills-todos" type="button" role="tab" aria-controls="pills-todos" aria-selected="true">
+                                <?php echo esc_html( $tab_todos ); ?>
+                            </button>
                         </li>
+                        <?php endif; ?>
                         <?php foreach ($product_categories as $category) : ?>
                             <li class="nav-item" role="presentation">
                                 <button class="btn btn-outline-primary ms-2" id="pills-<?php echo esc_attr($category->slug); ?>-tab" data-bs-toggle="pill" data-bs-target="#pills-<?php echo esc_attr($category->slug); ?>" type="button" role="tab" aria-controls="pills-<?php echo esc_attr($category->slug); ?>" aria-selected="false"><?php echo esc_html($category->name); ?></button>
@@ -121,31 +124,6 @@ get_header(); ?>
         </div>
     </div>
 </section>
-
-<!-- Script de busca (sem alterações) -->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const searchInput = document.getElementById('product-search-input');
-    if (searchInput) {
-        searchInput.addEventListener('keyup', function () {
-            const filter = searchInput.value.toLowerCase();
-            const activeTabPane = document.querySelector('.tab-pane.active');
-            if (!activeTabPane) return;
-
-            const productCards = activeTabPane.querySelectorAll('.product-card-item');
-
-            productCards.forEach(function(card) {
-                const title = card.querySelector('.card-title').textContent.toLowerCase();
-                if (title.includes(filter)) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    }
-});
-</script>
 
 <?php get_footer(); ?>
 
