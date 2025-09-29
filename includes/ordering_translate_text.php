@@ -36,6 +36,17 @@ add_action( 'init', function() {
             false 
         );
 
+        $numero_de_destaques = 3;
+        for ( $i = 0; $i < $numero_de_destaques; $i++ ) {
+            
+            pll_register_string( 
+                'Destaque - Título ' . ($i + 1), // Um nome amigável para a tela de tradução
+                get_theme_mod('home_hero_destaque_texto_' . $i), // O valor do campo
+                'Hero Principal', // Um grupo personalizado para organizar!
+                false // É um campo de texto simples
+            );
+        }
+
         // --- Você pode criar outros grupos para outras seções ---
         /*
         pll_register_string(
