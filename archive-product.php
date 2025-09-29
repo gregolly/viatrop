@@ -4,17 +4,11 @@
  *
  * This template displays all products with pagination on the "All" tab.
  */
-
 get_header(); ?>
 
 <section id="produtos" class="py-5">
     <div class="container">
-        <div class="row text-center mb-5">
-            <div class="col">
-                <h2 class="display-5 fw-bold">Nossos Produtos</h2>
-                <p class="lead">Explore nossa variedade de produtos de alta qualidade.</p>
-            </div>
-        </div>
+        <?php get_template_part('templates/product', 'title'); ?>
 
         <div class="row mb-4">
             <div class="col-md-8 mb-3 mb-md-0">

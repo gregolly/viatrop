@@ -141,6 +141,58 @@ function viatrop_customizer_hero( $wp_customize ) {
 
 add_action( 'customize_register', 'viatrop_customizer_hero' );
 
+function viatrop_customizer_products( $wp_customize ) {
+    // Criar painel para a seção de produtos (opcional, mas ajuda na organização)
+    $wp_customize->add_panel( 'produtos_panel', array(
+        'title'       => __( 'Opções da Seção Produtos', 'viatrop' ),
+        'priority'    => 35, // Define a ordem no menu principal do Customizer
+        'description' => __( 'Gerencie o conteúdo da seção de produtos aqui.', 'viatrop' ),
+    ) );
+    // 1. ADICIONAR A SEÇÃO DE PRODUTOS
+    $wp_customize->add_section( 'home_produtos_section', array(
+        'title'    => __( 'Seção de Produtos', 'viatrop' ),
+        'panel'    => 'produtos_panel', // Vincula ao painel "Opções da Página Inicial" que já existe
+        'priority' => 20,
+    ) );
+
+    // 2. CONTROLE PARA MOSTRAR/ESCONDER A SEÇÃO INTEIRA
+    $wp_customize->add_setting( 'produto_secao_visivel', array(
+        'default'   => true,
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_control( 'produto_secao_visivel_control', array(
+        'label'    => __( 'Mostrar esta seção?', 'viatrop' ),
+        'section'  => 'home_produtos_section',
+        'settings' => 'produto_secao_visivel',
+        'type'     => 'checkbox',
+    ) );
+    // --- Campo: Titulo principal produtos ---
+    $wp_customize->add_setting( 'produto_titulo_principal', array(
+        'default'   => 'Nossos Produtos',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'produto_titulo_principal_control', array(
+        'label'    => __( 'Título Principal da Seção de Produtos', 'viatrop' ),
+        'section'  => 'home_produtos_section',
+        'settings' => 'produto_titulo_principal',
+        'type'     => 'text',
+    ) );
+    // --- Campo: Subtítulo principal produtos ---
+    $wp_customize->add_setting( 'produto_subtitulo_principal', array(
+        'default'   => 'Explore nossa variedade de produtos de alta qualidade.',
+        'sanitize_callback' => 'wp_kses_post',
+    ) );
+    $wp_customize->add_control( 'produto_subtitulo_principal_control', array(
+        'label'    => __( 'Subtítulo da Seção de Produtos', 'viatrop' ),
+        'section'  => 'home_produtos_section',
+        'settings' => 'produto_subtitulo_principal',
+        'type'     => 'textarea',
+    ) );
+}
+
+add_action( 'customize_register', 'viatrop_customizer_products' );
+
 function viatrop_customizer_servicos( $wp_customize ) {
     // Criar um painel para a seção de serviços (opcional, mas ajuda na organização)
     $wp_customize->add_panel( 'servicos_panel', array(
