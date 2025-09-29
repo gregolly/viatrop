@@ -27,7 +27,16 @@
                         </li>
                         <?php foreach ($product_categories as $category) : ?>
                             <li class="nav-item" role="presentation">
-                                <button class="btn btn-outline-primary ms-2" id="pills-<?php echo esc_attr($category->slug); ?>-tab" data-bs-toggle="pill" data-bs-target="#pills-<?php echo esc_attr($category->slug); ?>" type="button" role="tab" aria-controls="pills-<?php echo esc_attr($category->slug); ?>" aria-selected="false"><?php echo esc_html($category->name); ?></button>
+                                <button 
+                                class="btn btn-outline-primary ms-2" 
+                                id="pills-<?php echo esc_attr($category->slug); ?>-tab"
+                                data-bs-toggle="pill" 
+                                data-bs-target="#pills-<?php echo esc_attr($category->slug); ?>" 
+                                type="button" 
+                                role="tab" 
+                                aria-controls="pills-<?php echo esc_attr($category->slug); ?>" aria-selected="false">
+                                    <?php echo esc_html($category->name); ?>
+                                </button>
                             </li>
                         <?php endforeach; ?>
                     </ul>
@@ -55,7 +64,6 @@
 
                     if ($all_products_query->have_posts()) :
                         while ($all_products_query->have_posts()) : $all_products_query->the_post();
-                            // CORREÇÃO APLICADA AQUI: Chamada correta para o template part.
                             get_template_part('templates/content', 'product-card');
                         endwhile;
                         wp_reset_postdata();
@@ -86,7 +94,6 @@
 
                             if ($category_query->have_posts()) :
                                 while ($category_query->have_posts()) : $category_query->the_post();
-                                     // CORREÇÃO: Chamada correta para o template part.
                                      get_template_part('templates/content', 'product-card');
                                 endwhile;
                                 wp_reset_postdata();
@@ -101,30 +108,3 @@
         </div>
     </div>
 </section>
-
-<!-- Adicione este JavaScript no seu arquivo JS principal ou no footer.php -->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const searchInput = document.getElementById('product-search-input');
-    if (searchInput) {
-        searchInput.addEventListener('keyup', function () {
-            const filter = searchInput.value.toLowerCase();
-            const activeTabPane = document.querySelector('.tab-pane.active');
-            if (!activeTabPane) return;
-
-            const productCards = activeTabPane.querySelectorAll('.product-card-item');
-
-            productCards.forEach(function(card) {
-                const title = card.querySelector('.card-title').textContent.toLowerCase();
-                if (title.includes(filter)) {
-                    // O próprio 'card' é a coluna (col-sm-6...), então podemos modificar o seu display.
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    }
-});
-</script>
-
