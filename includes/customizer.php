@@ -142,52 +142,106 @@ function viatrop_customizer_hero( $wp_customize ) {
 add_action( 'customize_register', 'viatrop_customizer_hero' );
 
 function viatrop_customizer_products( $wp_customize ) {
-    // Criar painel para a seção de produtos (opcional, mas ajuda na organização)
+    // Criar painel para a seção de produtos
     $wp_customize->add_panel( 'produtos_panel', array(
         'title'       => __( 'Opções da Seção Produtos', 'viatrop' ),
-        'priority'    => 35, // Define a ordem no menu principal do Customizer
+        'priority'    => 35,
         'description' => __( 'Gerencie o conteúdo da seção de produtos aqui.', 'viatrop' ),
     ) );
-    // 1. ADICIONAR A SEÇÃO DE PRODUTOS
+
+    // Adicionar a Seção de Produtos
     $wp_customize->add_section( 'home_produtos_section', array(
-        'title'    => __( 'Seção de Produtos', 'viatrop' ),
-        'panel'    => 'produtos_panel', // Vincula ao painel "Opções da Página Inicial" que já existe
-        'priority' => 20,
+        'title'    => __( 'Conteúdo da Página de Produtos', 'viatrop' ),
+        'panel'    => 'produtos_panel',
+        'priority' => 10,
     ) );
 
-    // 2. CONTROLE PARA MOSTRAR/ESCONDER A SEÇÃO INTEIRA
-    $wp_customize->add_setting( 'produto_secao_visivel', array(
-        'default'   => true,
-        'transport' => 'refresh',
-    ) );
-
-    $wp_customize->add_control( 'produto_secao_visivel_control', array(
-        'label'    => __( 'Mostrar esta seção?', 'viatrop' ),
-        'section'  => 'home_produtos_section',
-        'settings' => 'produto_secao_visivel',
-        'type'     => 'checkbox',
-    ) );
     // --- Campo: Titulo principal produtos ---
     $wp_customize->add_setting( 'produto_titulo_principal', array(
-        'default'   => 'Nossos Produtos',
+        'type'              => 'theme_mod',
+        'default'           => 'Nossos Produtos',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'produto_titulo_principal_control', array(
-        'label'    => __( 'Título Principal da Seção de Produtos', 'viatrop' ),
+        'label'    => __( 'Título Principal', 'viatrop' ),
         'section'  => 'home_produtos_section',
         'settings' => 'produto_titulo_principal',
         'type'     => 'text',
+        'priority' => 10,
     ) );
+
     // --- Campo: Subtítulo principal produtos ---
     $wp_customize->add_setting( 'produto_subtitulo_principal', array(
-        'default'   => 'Explore nossa variedade de produtos de alta qualidade.',
+        'type'              => 'theme_mod',
+        'default'           => 'Explore nossa variedade de produtos de alta qualidade.',
         'sanitize_callback' => 'wp_kses_post',
     ) );
     $wp_customize->add_control( 'produto_subtitulo_principal_control', array(
-        'label'    => __( 'Subtítulo da Seção de Produtos', 'viatrop' ),
+        'label'    => __( 'Subtítulo', 'viatrop' ),
         'section'  => 'home_produtos_section',
         'settings' => 'produto_subtitulo_principal',
         'type'     => 'textarea',
+        'priority' => 20,
+    ) );
+
+    // =========================================================================
+    // NOVOS CAMPOS ADICIONADOS A PARTIR DAQUI
+    // =========================================================================
+
+    // --- Campo: Texto da Aba "Todos" ---
+    $wp_customize->add_setting( 'produto_texto_aba_todos', array(
+        'type'              => 'theme_mod',
+        'default'           => 'Todos',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'produto_texto_aba_todos_control', array(
+        'label'    => __( 'Texto da Aba "Todos"', 'viatrop' ),
+        'section'  => 'home_produtos_section',
+        'settings' => 'produto_texto_aba_todos',
+        'type'     => 'text',
+        'priority' => 30,
+    ) );
+    
+    // --- Campo: Placeholder da Busca ---
+    $wp_customize->add_setting( 'produto_placeholder_busca', array(
+        'type'              => 'theme_mod',
+        'default'           => 'Buscar produtos...',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'produto_placeholder_busca_control', array(
+        'label'    => __( 'Texto do Campo de Busca', 'viatrop' ),
+        'section'  => 'home_produtos_section',
+        'settings' => 'produto_placeholder_busca',
+        'type'     => 'text',
+        'priority' => 40,
+    ) );
+
+    // --- Campo: Mensagem "Nenhum produto encontrado" ---
+    $wp_customize->add_setting( 'produto_msg_nenhum_encontrado', array(
+        'type'              => 'theme_mod',
+        'default'           => 'Nenhum produto encontrado.',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'produto_msg_nenhum_encontrado_control', array(
+        'label'    => __( 'Msg: Nenhum produto encontrado', 'viatrop' ),
+        'section'  => 'home_produtos_section',
+        'settings' => 'produto_msg_nenhum_encontrado',
+        'type'     => 'text',
+        'priority' => 50,
+    ) );
+    
+    // --- Campo: Mensagem "Nenhum produto na categoria" ---
+    $wp_customize->add_setting( 'produto_msg_nenhum_categoria', array(
+        'type'              => 'theme_mod',
+        'default'           => 'Nenhum produto encontrado nesta categoria.',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'produto_msg_nenhum_categoria_control', array(
+        'label'    => __( 'Msg: Nenhum produto na categoria', 'viatrop' ),
+        'section'  => 'home_produtos_section',
+        'settings' => 'produto_msg_nenhum_categoria',
+        'type'     => 'text',
+        'priority' => 60,
     ) );
 }
 
