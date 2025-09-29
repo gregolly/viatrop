@@ -8,6 +8,8 @@ Description: A simple theme for viatrop.
 
 Version: 1.0
 
+Text Domain: viatrop
+
 */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -71,10 +73,6 @@ a {
 	text-decoration: none !important;
 }
 
-/* .scrolled .site-header {
-	height: 80px !important;
-} */
-
 .scrolled .site-header > div {
 	padding-top: 0.5rem !important;
 	padding-bottom: 0.5rem !important;
@@ -84,18 +82,18 @@ a {
 	margin-bottom: 0;
 }
 
-#menu-menu-mobile li a, #menu-menu-mobile-1 li a {
+#menu-menu-mobile li a, 
+#menu-menu-mobile-1 li a, 
+#menu-menu-ingles li a,
+#menu-menu-espanhol li a {
 	color: #374151;
 	font-weight: 500;
-}
-
-#menu-menu-mobile li a {
 	padding: 20px;
 	display: block;
 	max-width: 100%;
 }
 
-#menu-menu-mobile 	{
+#menu-menu-mobile, #menu-menu-ingles, #menu-menu-espanhol {
 	padding-left: 0;
 }
 
@@ -184,14 +182,12 @@ a {
 	}
 }
 
-.navbar-toggler
-
 /* ==========================================================================
    Personalização das Tabs de Produtos
    ========================================================================== */
 
 /* Estilo para as tabs INATIVAS */
-.nav-pills .btn.btn-outline-primary {
+.nav-pills .btn.btn-outline-primary:not(.active) {
     color: #006461;
     border-color: #006461;
     background-color: transparent;
@@ -249,6 +245,20 @@ a {
  * Ajuste de scroll para compensar o header fixo/sticky.
  * Isso garante que as seções parem no lugar certo ao clicar em links âncora.
  */
+/* CÓDIGO CORRIGIDO */
 section[id] {
-    scroll-margin-top: 200px; /* Use a altura do seu header + um pequeno respiro */
+	scroll-margin-top: 50px; /* Valor para telas maiores */
+}
+
+@media screen and (max-width: 768px) {
+	section[id] {
+		scroll-margin-top: 400px; /* Valor para telas menores */
+	}
+}
+
+/* ==========================================================================
+   Estilizacao menu idiomas
+   ========================================================================== */
+.lang-item a {
+	color: #374151;
 }
