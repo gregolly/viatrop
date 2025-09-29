@@ -56,9 +56,9 @@
                 <div class="col">
                     <div class="card h-100 shadow-sm border-light-subtle hover-shadow">
                         <?php if(has_post_thumbnail()): ?>
-                        <a href="<?php the_permalink(); ?>" class="card-img-container">
-                            <?php the_post_thumbnail('medium_large', ['class' => 'card-img-top']); ?>
-                        </a>
+                        
+                        <?php the_post_thumbnail('medium_large', ['class' => 'card-img-top']); ?>
+                        
                         <?php endif; ?>
 
                         <div class="card-body d-flex flex-column">
