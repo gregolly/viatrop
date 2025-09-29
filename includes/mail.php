@@ -17,7 +17,7 @@ function configurar_smtp( $phpmailer ) {
     $phpmailer->Username  = defined('SMTP_USER') ? SMTP_USER : '';            //Seu e-mail ou usuario SMTP
     $phpmailer->Password  = defined('SMTP_PASS') ? SMTP_PASS : '';            //Sua senha
 
-    Configurações de criptografia e remetente
+    //Configurações de criptografia e remetente
     $phpmailer->SMTPSecure = defined('SMTP_SECURE') ? SMTP_SECURE : 'tls';    //Ou 'ssl' se estiver usando a porta 465
     $phpmailer->From       = defined('SMTP_FROM') ? SMTP_FROM : '';           //O e-mail que aparecerá como remetente
     $phpmailer->FromName   = defined('SMTP_NAME') ? SMTP_NAME : '';           //O nome que aparecerá como remetente
