@@ -23,7 +23,7 @@
                     <?php if ( ! empty( $product_categories ) && ! is_wp_error( $product_categories ) ) : ?>
                         <?php foreach ( $product_categories as $category ) : ?>
                             <li class="nav-item" role="presentation">
-                                <button class="btn btn-outline-primary ms-2" id="pills-<?php echo esc_attr( $category->slug ); ?>-tab" data-bs-toggle="pill" data-bs-target="#pills-<?php echo esc_attr( $category->slug ); ?>" type="button" role="tab" aria-controls="pills-<?php echo esc_attr( $category->slug ); ?>" aria-selected="false"><?php echo esc_html( $category->name ); ?></button>
+                                <button class="btn btn-outline-primary ms-2 btn-tab" id="pills-<?php echo esc_attr( $category->slug ); ?>-tab" data-bs-toggle="pill" data-bs-target="#pills-<?php echo esc_attr( $category->slug ); ?>" type="button" role="tab" aria-controls="pills-<?php echo esc_attr( $category->slug ); ?>" aria-selected="false"><?php echo esc_html( $category->name ); ?></button>
                             </li>
                         <?php endforeach; ?>
                     <?php endif; ?>
