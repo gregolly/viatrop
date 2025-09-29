@@ -13,3 +13,5 @@ require_once get_template_directory() . '/includes/customizer.php';
 require_once get_template_directory() . '/includes/catalog_page_products.php';
 
 require_once get_template_directory() . '/includes/dynamic_product_select_list.php';
+
+require_once get_template_directory() . '/includes/ordering_translate_text.php';
