@@ -76,36 +76,21 @@ if (empty($imagem_url)) {
         <div class="container my-5">
     <div class="row text-center gy-4">
 
+        <?php
+        for ( $i = 0; $i < 3; $i++ ) :
+            $icone = get_theme_mod('home_hero_destaque_icone_' . $i);
+            $titulo = get_theme_mod('home_hero_destaque_texto_' . $i);
+            if ( ! empty($titulo) && !empty($icone) ) :
+        ?>
         <div class="col-12 col-md-4">
             <div class="d-inline-flex align-items-center justify-content-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-lime-custom me-3" style="width: 1.5rem; height: 1.5rem;">
-                    <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
-                    <path d="m9 11 3 3L22 4"></path>
-                </svg>
-                <span class="fs-5">Qualidade Garantida</span>
+                <?php echo $icone; // Exibimos o SVG diretamente. Não use esc_html() aqui. ?>
+                <span class="fs-5"><?php echo esc_html($titulo) ?></span>
             </div>
         </div>
-
-        <div class="col-12 col-md-4">
-            <div class="d-inline-flex align-items-center justify-content-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-lime-custom me-3" style="width: 1.5rem; height: 1.5rem;">
-                    <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
-                    <path d="m9 11 3 3L22 4"></path>
-                </svg>
-                <span class="fs-5">Logística Otimizada</span>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-            <div class="d-inline-flex align-items-center justify-content-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-lime-custom me-3" style="width: 1.5rem; height: 1.5rem;">
-                    <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
-                    <path d="m9 11 3 3L22 4"></path>
-                </svg>
-                <span class="fs-5">Parcerias Sólidas</span>
-            </div>
-        </div>
-
+        <?php
+            endif;
+        endfor;  ?>
     </div>
 </div>
 
