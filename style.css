@@ -122,6 +122,30 @@ a {
 		top: 40px;
 		right: 40px;
 	}
+	
+	.navbar-toggler {
+	    top: 15px !important;
+	}
+	
+	/* mudanca botao whatsapp */
+	.whatsapp {
+	    font-size: 16px !important;
+	}
+	
+	section[id] {
+		scroll-margin-top: 400px; /* Valor para telas menores */
+	}
+	
+	.nav-pills .btn.btn-outline-primary {
+		margin-left: .25rem !important;
+	}
+	
+	section[id] {
+		scroll-margin-top: 400px; /* Valor para telas menores */
+	}
+	.nav-pills .btn.btn-outline-primary {
+		margin-left: .25rem !important;
+	}
 }
 
 .bg-lime-500 {
@@ -169,18 +193,6 @@ a {
 	margin-left: 5px !important;
 }
 
-/* mudanca botao whatsapp */
-.whatsapp { 
-	@media screen and (max-width: 768px) {
-		font-size: 16px !important;
-	}
-}
-
-.navbar-toggler {
-	@media screen and (max-width: 768px) {
-		top: 15px !important;
-	}
-}
 
 /* ==========================================================================
    Personalização das Tabs de Produtos
@@ -248,15 +260,6 @@ a {
 /* CÓDIGO CORRIGIDO */
 section[id] {
 	scroll-margin-top: 50px; /* Valor para telas maiores */
-}
-
-@media screen and (max-width: 768px) {
-	section[id] {
-		scroll-margin-top: 400px; /* Valor para telas menores */
-	}
-	.nav-pills .btn.btn-outline-primary {
-		margin-left: .25rem !important;
-	}
 }
 
 /* ==========================================================================
