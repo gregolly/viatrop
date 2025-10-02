@@ -269,3 +269,49 @@ section[id] {
 	color: #374151 !important;
 }
 
+/*
+==============================================
+ Estilos para as Badges de Tipo de Produto
+==============================================
+*/
+
+/* Estilo base para todas as badges, para garantir consistência */
+.card-badges .badge {
+    color: #fff; /* Cor do texto (branco) */
+    font-weight: 500;
+    font-size: 0.75rem;
+    padding: 0.4em 0.7em;
+    text-transform: uppercase; /* Opcional: deixa o texto em maiúsculas */
+}
+
+/* --- Cores Específicas para Cada Tipo --- */
+
+/* Assépticos (um tom de cinza/chumbo, sugerindo algo técnico/industrial) */
+.card-badges .tipo-assepticos {
+    background-color: #6c757d; 
+}
+
+/* Congelados (um azul frio, remetendo a gelo) */
+.card-badges .tipo-congelados {
+    background-color: #0dcaf0; 
+}
+
+/* In Natura (um verde vivo, que remete a algo natural e fresco) */
+.card-badges .tipo-in-natura {
+    background-color: #198754; 
+}
+
+/* Integral (um tom terroso/marrom, associado a grãos e produtos integrais) */
+.card-badges .tipo-integral {
+    background-color: #8B4513; /* Cor: SaddleBrown */
+}
+
+/* Orgânicos (um verde mais claro e vibrante, associado a produtos orgânicos) */
+.card-badges .tipo-organicos {
+    background-color: #84b819; 
+}
+
+/* Outros (uma cor neutra mas distinta, como um roxo ou azul marinho) */
+.card-badges .tipo-outros {
+    background-color: #4f5b67;
+}

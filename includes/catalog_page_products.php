@@ -48,3 +48,32 @@ function criar_taxonomia_geral_de_produtos() {
     ));
 }
 add_action( 'init', 'criar_taxonomia_geral_de_produtos' );
+
+function registrar_taxonomia_tipo_produto() {
+    $labels = array(
+        'name'              => _x( 'Tipos de Produto', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Tipo de Produto', 'taxonomy singular name' ),
+        'search_items'      => __( 'Procurar Tipos' ),
+        'all_items'         => __( 'Todos os Tipos' ),
+        'parent_item'       => __( 'Tipo Pai' ),
+        'parent_item_colon' => __( 'Tipo Pai:' ),
+        'edit_item'         => __( 'Editar Tipo' ),
+        'update_item'       => __( 'Atualizar Tipo' ),
+        'add_new_item'      => __( 'Adicionar Novo Tipo' ),
+        'new_item_name'     => __( 'Novo Nome do Tipo' ),
+        'menu_name'         => __( 'Tipos de Produto' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'tipo' ),
+    );
+
+    // Associando a nova taxonomia 'tipo_produto' ao seu CPT 'product'
+    register_taxonomy( 'tipo_produto', array( 'product' ), $args ); 
+}
+add_action( 'init', 'registrar_taxonomia_tipo_produto', 0 );

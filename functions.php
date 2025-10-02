@@ -11,3 +11,9 @@ require_once get_template_directory() . '/includes/customizer.php';
 require_once get_template_directory() . '/includes/catalog_page_products.php';
 
 require_once get_template_directory() . '/includes/dynamic_product_select_list.php';
+
+require_once get_template_directory() . '/includes/filter_products_ajax_handler.php';
+
+require_once get_template_directory() . '/includes/badge_style.php';
+
+require_once get_template_directory() . '/includes/get_valid_product_types_ajax_handler.php';

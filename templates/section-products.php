@@ -1,45 +1,31 @@
 <?php
 /**
- * Template Part: Section Products
+ * Template Part: Section Products (AJAX Version)
  *
- * This component displays products from the 'product' CPT with a category filter.
- * It is designed to be reusable on the homepage and the product archive page.
- * This version includes messages for when no products are found.
+ * Displays products dynamically using AJAX filters for categories and types.
  */
 ?>
 <section id="produtos" class="py-5">
     <div class="container">
         <?php get_template_part('templates/product', 'title'); ?>
 
-        <div class="row mb-4">
+        <div class="row mb-3">
             <div class="col-md-8 mb-3 mb-md-0">
                 <?php
-                // Busca todas as categorias de produto que têm posts associados.
                 $product_categories = get_terms(array(
                     'taxonomy'   => 'categoria_produto',
                     'hide_empty' => true,
                 ));
                 ?>
                 <?php if (!empty($product_categories) && !is_wp_error($product_categories)) : ?>
-                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="btn btn-outline-primary active" id="pills-todos-tab" data-bs-toggle="pill" data-bs-target="#pills-todos" type="button" role="tab" aria-controls="pills-todos" aria-selected="true">Todos</button>
-                        </li>
+                    <div class="filters-main nav nav-pills">
+                        <button class="btn btn-outline-primary active" data-category-slug="todos">Todos</button>
                         <?php foreach ($product_categories as $category) : ?>
-                            <li class="nav-item" role="presentation">
-                                <button 
-                                class="btn btn-outline-primary ms-2" 
-                                id="pills-<?php echo esc_attr($category->slug); ?>-tab"
-                                data-bs-toggle="pill" 
-                                data-bs-target="#pills-<?php echo esc_attr($category->slug); ?>" 
-                                type="button" 
-                                role="tab" 
-                                aria-controls="pills-<?php echo esc_attr($category->slug); ?>" aria-selected="false">
-                                    <?php echo esc_html($category->name); ?>
-                                </button>
-                            </li>
+                            <button class="btn btn-outline-primary ms-2" data-category-slug="<?php echo esc_attr($category->slug); ?>">
+                                <?php echo esc_html($category->name); ?>
+                            </button>
                         <?php endforeach; ?>
-                    </ul>
+                    </div>
                 <?php endif; ?>
             </div>
             <div class="col-md-4">
@@ -52,59 +38,37 @@
             </div>
         </div>
 
-        <div class="tab-content" id="pills-tabContent">
-            <!-- Aba "Todos" -->
-            <div class="tab-pane fade show active" id="pills-todos" role="tabpanel" aria-labelledby="pills-todos-tab">
-                <div class="row gy-4">
-                    <?php
-                    $all_products_query = new WP_Query(array(
-                        'post_type'      => 'product',
-                        'posts_per_page' => 6,
-                    ));
-
-                    if ($all_products_query->have_posts()) :
-                        while ($all_products_query->have_posts()) : $all_products_query->the_post();
-                            get_template_part('templates/content', 'product-card');
-                        endwhile;
-                        wp_reset_postdata();
-                    else :
-                        echo '<div class="col"><p class="text-center">Nenhum produto encontrado.</p></div>';
-                    endif;
-                    ?>
-                </div>
-            </div>
-
-            <!-- Abas por Categoria -->
-            <?php if (!empty($product_categories) && !is_wp_error($product_categories)) : ?>
-                <?php foreach ($product_categories as $category) : ?>
-                    <div class="tab-pane fade" id="pills-<?php echo esc_attr($category->slug); ?>" role="tabpanel" aria-labelledby="pills-<?php echo esc_attr($category->slug); ?>-tab">
-                        <div class="row gy-4">
-                            <?php
-                            $category_query = new WP_Query(array(
-                                'post_type'      => 'product',
-                                'posts_per_page' => 6,
-                                'tax_query'      => array(
-                                    array(
-                                        'taxonomy' => 'categoria_produto',
-                                        'field'    => 'slug',
-                                        'terms'    => $category->slug,
-                                    ),
-                                ),
-                            ));
-
-                            if ($category_query->have_posts()) :
-                                while ($category_query->have_posts()) : $category_query->the_post();
-                                     get_template_part('templates/content', 'product-card');
-                                endwhile;
-                                wp_reset_postdata();
-                            else :
-                                echo '<div class="col"><p class="text-center">Nenhum produto encontrado nesta categoria.</p></div>';
-                            endif;
-                            ?>
-                        </div>
+        <div class="row mb-4 d-none">
+            <div class="col-12">
+                 <?php
+                $product_types = get_terms(array(
+                    'taxonomy'   => 'tipo_produto', // Slug da nossa nova taxonomia
+                    'hide_empty' => true,
+                ));
+                ?>
+                <?php if (!empty($product_types) && !is_wp_error($product_types)) : ?>
+                    <div class="filters-sub nav nav-pills">
+                        <small class="me-3 align-self-center">Filtrar por tipo:</small>
+                        <button class="btn btn-sm btn-light active" data-type-slug="todos">Todos</button>
+                        <?php foreach ($product_types as $type) : ?>
+                            <button class="btn btn-sm btn-light ms-2" data-type-slug="<?php echo esc_attr($type->slug); ?>">
+                                <?php echo esc_html($type->name); ?>
+                            </button>
+                        <?php endforeach; ?>
                     </div>
-                <?php endforeach; ?>
-            <?php endif; ?>
+                <?php endif; ?>
+            </div>
         </div>
+
+        <div id="product-results" class="row gy-4">
+            <div class="col-12 text-center">
+                <p>Carregando produtos...</p>
+            </div>
+        </div>
+
+        <div id="load-more-container" class="text-center mt-5" style="display: none;">
+            <button id="load-more-btn" class="btn btn-success">Carregar Mais Produtos</button>
+        </div>
+
     </div>
 </section>

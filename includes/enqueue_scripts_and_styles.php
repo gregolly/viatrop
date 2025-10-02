@@ -11,6 +11,7 @@ function viatrop_enqueue_scripts() {
   wp_enqueue_script( 'shrink-menu', get_template_directory_uri() . '/js/shrink.js', array(), null, true );
   wp_enqueue_script( 'search-filter', get_template_directory_uri() . '/js/product-search-input.js', array('jquery'), null, true );
   wp_enqueue_script( 'tab-filter', get_template_directory_uri() . '/js/tab.js', array('jquery'), null, true );
+  wp_enqueue_script( 'filter_product', get_template_directory_uri() . '/js/filter_products.js', array('jquery'), null, true );
 }
 
 add_action( 'wp_enqueue_scripts', 'viatrop_enqueue_scripts' );
