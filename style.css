@@ -315,3 +315,140 @@ section[id] {
 .card-badges .tipo-outros {
     background-color: #4f5b67;
 }
+
+/* Estilos Customizados para a Seção de Depoimentos */
+
+.testimonial-section {
+    background-color: #f8f9fa; /* Um cinza claro de fundo */
+    min-height: 70vh; /* Altura mínima para a seção */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+}
+
+.testimonial-wrapper {
+    max-width: 900px; /* Largura máxima da caixa principal */
+}
+
+.testimonial-content-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+.quote-icon {
+    font-family: serif; /* Ou uma fonte que simule as aspas da imagem */
+    font-size: 5rem; /* Aumenta o tamanho das aspas */
+    line-height: 0.6;
+    color: #ced4da; /* Cor cinza claro para as aspas */
+}
+
+.testimonial-text {
+    font-size: 1.6rem; /* Tamanho da fonte do depoimento */
+    line-height: 1.6;
+    font-weight: 500;
+    color: #343a40; /* Cor escura para o texto */
+    /* Para a fonte da imagem: "Inter", "system-ui" ou similar */
+    /* font-family: 'Inter', sans-serif; */ 
+}
+
+.testimonial-avatar {
+    width: 60px; /* Tamanho do avatar */
+    height: 60px;
+    object-fit: cover; /* Garante que o avatar preencha o círculo sem distorção */
+    border: 2px solid #e9ecef; /* Borda suave no avatar */
+}
+
+.testimonial-author {
+    font-size: 1.1rem;
+    color: #212529;
+}
+
+.testimonial-role {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.testimonial-selectors {
+    flex-wrap: wrap; /* Permite que os seletores quebrem a linha em telas menores */
+    gap: 15px; /* Espaço entre os botões */
+}
+
+.testimonial-selector {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    color: #495057;
+    border-radius: 8px;
+    min-width: 180px;
+    height: 90px;
+    transition: all 0.3s ease;
+    text-align: center;
+    padding: 1rem; /* Adicionado para melhor alinhamento interno */
+    display: flex; /* Adicionado para melhor controle */
+    flex-direction: column; /* Adicionado para empilhar */
+    justify-content: center; /* Adicionado para centralizar */
+    align-items: center; /* Adicionado para centralizar */
+	transition: background-color 0.3s ease, 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease, 
+                transform 0.3s ease;
+}
+
+/* ESTA É A PARTE CORRIGIDA E MAIS IMPORTANTE */
+
+/* Define o estilo para QUANDO o botão estiver ATIVO ou em HOVER */
+.testimonial-selector.active,
+.testimonial-selector:hover {
+    background-color: #212529; /* Um fundo bem escuro (padrão Bootstrap) */
+    border-color: #212529; /* Borda da mesma cor do fundo */
+    color: #fff; /* Cor de fallback para o texto */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+}
+
+.testimonial-selector.active p,
+.testimonial-selector.active small,
+.testimonial-selector:hover p,
+.testimonial-selector:hover small {
+    color: #fff !important;
+}
+
+
+/* --- Estilos para os textos dentro do botão (estado padrão) --- */
+.testimonial-selector p {
+    margin-bottom: 0.2rem;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    font-weight: bold;
+    color: #495057; /* Cor padrão do nome */
+    transition: color 0.3s ease; /* Transição suave de cor */
+}
+
+.testimonial-selector small {
+    font-size: 0.75rem;
+    line-height: 1;
+    color: #6c757d; /* Cor padrão do cargo */
+    transition: color 0.3s ease; /* Transição suave de cor */
+}
+
+/* Animações para transição suave */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade para seletores */
+@media (max-width: 767.98px) {
+    .testimonial-selectors {
+        flex-direction: column; /* Pilha os botões em telas pequenas */
+        align-items: stretch; /* Estica para preencher a largura */
+    }
+    .testimonial-selector {
+        min-width: 100%; /* Botões ocupam 100% da largura */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
