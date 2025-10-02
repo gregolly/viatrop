@@ -108,6 +108,7 @@ if (empty($imagem_url)) {
 
 <?php get_template_part('templates/section-products'); ?>
 <?php get_template_part('templates/section-services'); ?>
+<?php get_template_part('templates/section-partners'); ?>
 <?php get_template_part('templates/section-about'); ?>
 <?php get_template_part('templates/section-contact'); ?>
 
