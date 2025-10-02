@@ -19,3 +19,5 @@ require_once get_template_directory() . '/includes/badge_style.php';
 require_once get_template_directory() . '/includes/get_valid_product_types_ajax_handler.php';
 
 require_once get_template_directory() . '/includes/custom_posts_types_partners.php';
+
+require_once get_template_directory() . '/includes/custom_posts_types_testimonials.php';
