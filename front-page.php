@@ -18,7 +18,7 @@ if (empty($imagem_url)) {
 ?>
 <main class="main-home position-relative py-5 text-white" 
       style="background-image: linear-gradient(rgba(0, 100, 97, 0.7), rgba(0, 100, 97, 0.7)), url('<?php echo esc_url($imagem_url); ?>');
-       background-repeat: no-repeat; background-position: center; background-size: cover;">
+       background-repeat: no-repeat; background-position: center; background-size: cover;" fetchpriority="high">
     
     <div class="container text-center">
         <?php if ($linha1) : ?>
