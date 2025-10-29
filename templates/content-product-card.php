@@ -33,7 +33,7 @@
                 echo '</div>';
             }
             ?>
-            <h5 class="card-title"><?php the_title(); ?></h5>
+            <h5 class="card-title text-uppercase"><?php the_title(); ?></h5>
             
             <div class="card-text mb-3"><?php the_excerpt(); ?></div>
             
