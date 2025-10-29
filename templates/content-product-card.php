@@ -30,8 +30,30 @@
 
                 // Loop para exibir cada tipo como uma badge
                 foreach ( $tipos_produto as $tipo ) {
-                    // A classe 'tipo-[slug]' permite customizar a cor de cada badge via CSS
-                    echo '<span class="badge me-1 tipo-' . esc_attr( $tipo->slug ) . '">' . esc_html( $tipo->name ) . '</span>';
+                    
+                    // PASSO 1: Busca a cor customizada (NATIVA) do TERMO da taxonomia
+                    // Substituímos get_field() por get_term_meta()
+                    $cor_fundo = get_term_meta( $tipo->term_id, 'cor_do_badge', true );
+                    
+                    $estilo_inline = ''; // Inicia a variável de estilo
+                    
+                    if ($cor_fundo) {
+                        // PASSO 2: Tenta adivinhar a cor do texto (preto ou branco)
+                        $cor_texto = '#ffffff'; // Padrão branco
+                        if ( function_exists('vtp_get_contrasting_text_color') ) {
+                            $cor_texto = vtp_get_contrasting_text_color($cor_fundo);
+                        }
+                        
+                        // PASSO 3: Monta o estilo inline
+                        $estilo_inline = 'style="background-color:' . esc_attr($cor_fundo) . '; color:' . esc_attr($cor_texto) . '; border-color:' . esc_attr($cor_fundo) . ';"';
+                    
+                    } else {
+                        // Cor padrão (cinza do Bootstrap) se nenhuma cor for definida
+                        $estilo_inline = 'style="background-color: #6c757d; color: #fff;"';
+                    }
+
+                    // PASSO 4: Imprime o badge com o estilo inline
+                    echo '<span class="badge me-1" ' . $estilo_inline . '>' . esc_html( $tipo->name ) . '</span>';
                 }
 
                 echo '</div>';

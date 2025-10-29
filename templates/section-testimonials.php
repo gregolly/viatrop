@@ -1,4 +1,4 @@
-<section class="testimonial-section py-5 bg-light">
+<section class="testimonial-section py-5 bg-light d-none">
     <div class="container">
         <div class="testimonial-wrapper mx-auto">
             <div class="testimonial-content-box p-4 p-md-5 bg-white shadow-sm border rounded">

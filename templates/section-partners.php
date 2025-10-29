@@ -3,7 +3,7 @@
  * Template Part: Section Partners
  */
 ?>
-<div class="container py-5">
+<div class="container py-5 d-none">
     <div class="row text-center">
         <div class="col-12">
             <h2 class="mb-4 display-5 fw-bold text-dark">Nossos Parceiros</h2>

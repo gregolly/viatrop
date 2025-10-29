@@ -19,8 +19,6 @@ require_once get_template_directory() . '/includes/dynamic_product_select_list.p
 
 require_once get_template_directory() . '/includes/filter_products_ajax_handler.php';
 
-require_once get_template_directory() . '/includes/badge_style.php';
-
 require_once get_template_directory() . '/includes/get_valid_product_types_ajax_handler.php';
 
 require_once get_template_directory() . '/includes/custom_posts_types_partners.php';
@@ -28,3 +26,5 @@ require_once get_template_directory() . '/includes/custom_posts_types_partners.p
 require_once get_template_directory() . '/includes/custom_posts_types_testimonials.php';
 
 require_once get_template_directory() . '/includes/defer_scripts.php';
+
+require_once get_template_directory() . '/includes/badge_color.php';
