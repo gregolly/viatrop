@@ -1,6 +1,9 @@
 <?php
 
 add_theme_support( 'title-tag' );
+add_filter('wp_calculate_image_sizes', function($sizes, $size, $image_src, $image_meta, $attachment_id) {
+  return '(max-width: 768px) 100vw, 616px';
+}, 10, 5);
 
 require_once get_template_directory() . '/includes/setup.php';
 
