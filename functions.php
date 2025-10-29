@@ -1,5 +1,7 @@
 <?php
 
+add_theme_support( 'title-tag' );
+
 require_once get_template_directory() . '/includes/setup.php';
 
 require_once get_template_directory() . '/includes/enqueue_scripts_and_styles.php';
@@ -21,3 +23,5 @@ require_once get_template_directory() . '/includes/get_valid_product_types_ajax_
 require_once get_template_directory() . '/includes/custom_posts_types_partners.php';
 
 require_once get_template_directory() . '/includes/custom_posts_types_testimonials.php';
+
+require_once get_template_directory() . '/includes/defer_scripts.php';
