@@ -350,7 +350,7 @@ section[id] {
     font-size: 1.6rem; /* Tamanho da fonte do depoimento */
     line-height: 1.6;
     font-weight: 500;
-    color: #343a40; /* Cor escura para o texto */
+    color: #212529; /* Cor escura para o texto */
     /* Para a fonte da imagem: "Inter", "system-ui" ou similar */
     /* font-family: 'Inter', sans-serif; */ 
 }
@@ -455,4 +455,13 @@ section[id] {
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
+}
+
+/*** Inner page product ***/
+.product-list-sidebar li a {
+    color: #212529;
+}
+
+.product-list-sidebar li a:hover {
+    opacity: .5;
 }
