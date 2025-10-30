@@ -26,3 +26,5 @@ require_once get_template_directory() . '/includes/custom_posts_types_partners.p
 require_once get_template_directory() . '/includes/custom_posts_types_testimonials.php';
 
 require_once get_template_directory() . '/includes/badge_color.php';
+
+require_once get_template_directory() . '/includes/remove-native-resources.php';
