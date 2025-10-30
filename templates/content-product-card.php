@@ -9,7 +9,10 @@
     <div class="card h-100">
         <?php if (has_post_thumbnail()) : ?>
             <a href="<?php the_permalink(); ?>">
-                <img src="<?php the_post_thumbnail_url('medium_large'); ?>" class="card-img-top" alt="<?php the_title_attribute(); ?>">
+                <?php the_post_thumbnail('product-card', [ 
+                    'class' => 'card-img-top',
+                    'alt'   => get_the_title()
+                ]); ?>
             </a>
         <?php else : ?>
             <a href="<?php the_permalink(); ?>">
