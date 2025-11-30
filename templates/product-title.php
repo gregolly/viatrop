@@ -6,7 +6,7 @@ $subtitulo_principal = get_theme_mod('produto_subtitulo_principal', 'Explore nos
 
 <div class="row text-center mb-5">
     <div class="col">
-        <h2 class="display-5 fw-bold"><?php echo esc_html( $titulo_principal ) ?></h2>
+        <h1 class="display-5 fw-bold"><?php echo esc_html( $titulo_principal ) ?></h1>
         <p class="lead"><?php echo esc_html( $subtitulo_principal ) ?></p>
     </div>
 </div>
