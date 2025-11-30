@@ -44,6 +44,7 @@
                 $product_types = get_terms(array(
                     'taxonomy'   => 'tipo_produto', // Slug da nossa nova taxonomia
                     'hide_empty' => true,
+                    'order'          => 'ASC',
                 ));
                 ?>
                 <?php if (!empty($product_types) && !is_wp_error($product_types)) : ?>
